@@ -3,16 +3,16 @@ var config=require("./config.json");
 
 
 module.exports=function(app){
-  app.get('/api/tedData', async (req, res,next)=> {
+  app.get('/api/hotelData', async (req, res,next)=> {
     try{
       const db = req.app.locals.db;
       const perPage = 100;
     //  var page = parseInt(req.query.page);
     var page=0; 
     page+=1;
-      const tedData = await db.collection(config.db.connection.tedCollection).find({}).skip((perPage * page) - perPage).limit(perPage).toArray();
-        if(tedData){
-          res.send(tedData);
+      const hotelData = await db.collection(config.db.connection.collection).find({}).toArray();
+        if(hotelData){
+          res.send(hotelData);
         }
         else{
           res.sendStatus(404);

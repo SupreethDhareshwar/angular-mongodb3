@@ -1,5 +1,6 @@
 # Initally install angular cli
 
+
 npm install -g @angular/cli
 
 ng new angular-app --style=scss --routing
@@ -9,6 +10,10 @@ cd angular-app
 # Setting up angular material as default theme
   
   ng add @angular/material
+
+# Importing CSV Files into Mongodb
+
+ mongoimport --host=127.0.0.1 -d ArthDesign -c Hotels --type csv --file e:/Hotels.csv --headerline
 
 # Ng6Proj
 

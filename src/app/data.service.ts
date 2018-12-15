@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Movie } from './models/movie.model';
+import { Hotel } from './models/hotel.model';
 import { Observable }   from 'rxjs';
 
 @Injectable({
@@ -10,7 +10,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getMovieListing(): Observable<Movie[]> {
-    return this.http.get<Movie[]>('http://starlord.hackerearth.com/movieslisting');
+  getHotelListing(): Observable<Hotel[]> {
+    return this.http.get<Hotel[]>('http://localhost:3001/api/hotelData');
   }
 }

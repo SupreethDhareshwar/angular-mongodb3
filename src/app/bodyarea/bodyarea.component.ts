@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 import { DataService } from '../data.service';
-import { Movie } from '../models/movie.model';
+import { Hotel } from '../models/hotel.model';
 
 @Component({
   selector: 'app-bodyarea',
@@ -10,8 +10,8 @@ import { Movie } from '../models/movie.model';
 })
 export class BodyareaComponent implements OnInit {
 
-  displayedColumns: string[] = ['movie_title', 'title_year'];
-  dataSource = new MatTableDataSource<Movie>();
+  displayedColumns: string[] = ['name', 'categories','city','country','province'];
+  dataSource = new MatTableDataSource<Hotel>();
   
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -21,7 +21,7 @@ export class BodyareaComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private data: DataService) { 
-    data.getMovieListing().subscribe((response) => {
+    data.getHotelListing().subscribe((response) => {
       this.dataSource.data = response;
   });
   }

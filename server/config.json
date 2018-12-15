@@ -4,8 +4,8 @@
     "connection": {
       "host": "localhost",
       "port":"27017",
-      "database": "TED",
-      "tedCollection":"TED-22kData"
+      "database": "ArthDesign",
+      "collection":"Hotels"
     }
   }
 }

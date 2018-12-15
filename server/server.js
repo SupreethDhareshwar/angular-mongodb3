@@ -14,7 +14,6 @@ if (process.env.NODE_ENV === "production") {
 
 var testApp=new api(app);
 var url = config.db.client+'://'+config.db.connection.host+':'+config.db.connection.port+'/'+config.db.connection.database;
-console.log(url);
 MongoClient.connect(url, { 
   useNewUrlParser: true
  }, (err, database) => {
