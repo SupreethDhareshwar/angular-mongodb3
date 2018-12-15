@@ -1,44 +1,35 @@
-# Initally install angular cli
+## Quick Overview
 
+Make sure to have nodejs 10.4 installed
 
-npm install -g @angular/cli
+```sh
+cd angular-mongodb3
+npm install
+cd server
+npm install
+cd ..
+npm start
+```
 
-ng new angular-app --style=scss --routing
+This starts up the app and can be viewed on http://localhost:4200/ 
 
-cd angular-app
+Initial Screen:
 
-# Setting up angular material as default theme
-  
-  ng add @angular/material
+<p align='center'>
+<img src='InitialScreen.png' width='600' alt='npm start'>
+</p>
 
-# Importing CSV Files into Mongodb
+Initial  Assumption:
+The Excel Files have been dumped to Mongo Db on that machine
 
- mongoimport --host=127.0.0.1 -d ArthDesign -c Hotels --type csv --file e:/Hotels.csv --headerline
+## Brief Explanation of Code
 
-# Ng6Proj
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* This application is setup with angular and themed in angular material UI on frontend side
+* On the backend side, the APIs are setup with nodejs, express JS and MongoDB for the database
+* All Client related code sits in src folder
+* UI has a simple header component and Home Component which consists of cards 
+* Data.Service.ts has the fetch API and fetches  data
+* Now the data is loaded into the cards component 
+* On Server Side, Node JS and Express JS is used for hosting the APIs and mongodb package is used for connecting to database
+* On server startup, it connects to mongodb one time
+* In Server folder/server.js, API is written for fetching the data from DB
